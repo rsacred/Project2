@@ -1,3 +1,5 @@
+<?xml version='1.0'?>
+
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <xacro:include filename="$(find my_robot)/urdf/my_robot.gazebo" />
@@ -67,7 +69,9 @@
     </visual>
 
   </link>
-  
+
+<!-- Add two wheels -->
+
   <link name='right_wheel'>
    <pose>0 0 0 0 0 0</pose>
 
@@ -145,31 +149,26 @@
 		<dynamics damping="1.0" friction="1.0"/>
 	</joint>
 
-	
-
+  <!-- Add camera -->
 
   <link name="camera">
-	<pose>0 0 0 0 0 0</pose>
+	<origin xyz="0 0 0" rpy="0 0 0" />
 
     <inertial>
       <mass value="0.1"/>
-      <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
       <inertia
           ixx="1e-6" ixy="0" ixz="0"
-          iyy="1e-6" iyz="0"
-          izz="1e-6"
+          iyy="1e-6" iyz="0" izz="1e-6"
       />
     </inertial>
 
     <collision name='collision'>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/> 
       <geometry>
         <box size="0.05, 0.05, 0.05"/>
       </geometry>
     </collision>
 
     <visual name='visual'>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
         <box size="0.05, 0.05, 0.05"/>
       </geometry>
@@ -178,36 +177,32 @@
   </link>
 
   <joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0"/>
     <origin xyz="0.2 0 0" rpy="0 0 0" />
     <parent link="chassis"/>
     <child link="camera" />
-    <axis xyz="0 1 0" rpy="0 0 0"/>
   </joint>
   
-
+  <!-- Add Lidar -->
 
   <link name="hokuyo">
-      <pose>0 0 0 0 0 0</pose>
+    <origin xyz="0 0 0" rpy="0 0 0" />
 
     <inertial>
       <mass value="1e-5"/>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <inertia
           ixx="1e-6" ixy="0" ixz="0"
-          iyy="1e-6" iyz="0"
-          izz="1e-6"
+          iyy="1e-6" iyz="0" izz="1e-6"
       />
     </inertial>
 
     <collision name='collision'>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/> 
       <geometry>
         <box size="0.1, 0.1, 0.1"/>
       </geometry>
     </collision>
 
     <visual name='visual'>
-      <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
         <mesh filename="package://my_robot/meshes/hokuyo.dae"/>
       </geometry>
@@ -216,11 +211,10 @@
   </link>
 
  <joint name="hokuyo_joint" type="fixed">
+    <axis xyz="0 1 0" rpy="0 0 0"/>
     <origin xyz="0.15 0 0.1" rpy="0 0 0" />
     <parent link="chassis"/>
     <child link="hokuyo" />
-    <axis xyz="0 1 0" rpy="0 0 0"/>
   </joint>
-
 
 </robot>
