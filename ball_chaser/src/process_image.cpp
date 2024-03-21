@@ -43,17 +43,16 @@ void process_image_callback(const sensor_msgs::Image img)
 				ROS_INFO("White ball detected on left");
 				drive_robot(0.5, 0.5);
 				
-			}else if(pixel_pos <= int(img.step * 2/3)){
-				ROS_INFO("White ball detected in middle");	
-				drive_robot(0.5, 0);
-				
 			}else if(pixel_pos >= int(img.step * 2/3)){
 				ROS_INFO("White ball detected on right");
-				drive_robot(0.5, -0.5);	
-				
+				drive_robot(0.5, -0.5);
+
 			}else{
-				drive_robot(0.0, 0.0);
+				ROS_INFO("White ball detected in middle");	
+				drive_robot(0.5, 0);
 			}
+		}else{
+			drive_robot(0.0, 0.0);
 		}
 	}
 }
