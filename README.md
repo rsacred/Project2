@@ -1,6 +1,6 @@
-# Project 2: Go Chase It
+# Project 2: Go Chase It!
 
-Create a robot using ROS that follows a white ball.
+This project involves using ROS to create a robot that follows a white ball.
 
 
 ## Structure
@@ -31,8 +31,6 @@ Create a robot using ROS that follows a white ball.
     │   ├── package.xml                # package info                  
     └──   
 ```
-
-
 ## Build and Launch
 
 Load Protocol:
@@ -40,26 +38,21 @@ mkdir /home/workspace/catkin_ws/
 cd /home/workspace/catkin_ws/
 git clone https://github.com/rsacred/Project2 src
 
-
-	//Init the catkin workspace
-
+Initialize the catkin workspace:
 cd src
 catkin_init_workspace
 
-	//Build the catkin package
-
+Build the catkin package:
 cd /home/workspace/catkin_ws
 catkin_make
 
-	//Launch the gazebo simulation On a first terminal run
-
+Launch the gazebo simulation:
 source devel/setup.bash
 roslaunch my_robot world.launch
 
-	//Launch drive_bot and process_image nodes Open a new terminal and launch the ball_chaser:
-
+In a new terminal, launch ball_chaser by launching the drive_bot and process_image nodes:
 cd /home/workspace/catkin_ws
 source devel/setup.bash
 roslaunch ball_chaser ball_chaser.launch
 
-Now you can move the white ball in the world so that the robot will follow it.
+Now you can move the white ball in the world and observe the robot following it.
