@@ -34,9 +34,11 @@ This project involves using ROS to create a robot that follows a white ball.
 ## Build and Launch
 
 Load Protocol:
+```
 $ mkdir /home/workspace/catkin_ws/
 $ cd /home/workspace/catkin_ws/
 git clone https://github.com/rsacred/Project2 src
+```
 
 Initialize the catkin workspace:
 cd src
