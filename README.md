@@ -45,25 +45,30 @@ git clone https://github.com/rsacred/Project2 src
 Initialize the catkin workspace:
 ```
 cd src
+```
 catkin_init_workspace
 ```
 
 Build the catkin package:
 ```
 cd /home/workspace/catkin_ws
+```
 catkin_make
 ```
 
 Launch the gazebo simulation:
 ```
 source devel/setup.bash
+```
 roslaunch my_robot world.launch
 ```
 
 In a new terminal, launch ball_chaser by launching the drive_bot and process_image nodes:
 ```
 cd /home/workspace/catkin_ws
+```
 source devel/setup.bash
+```
 roslaunch ball_chaser ball_chaser.launch
 ```
 
