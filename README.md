@@ -3,7 +3,7 @@
 This project involves using ROS to create a robot that follows a white ball.
 
 
-## Structure
+## File Structure
 ```
     .Project2                          # Go Chase It Project
     ├── my_robot                       # my_robot package                   
@@ -31,9 +31,9 @@ This project involves using ROS to create a robot that follows a white ball.
     │   ├── package.xml                # package info                  
     └──   
 ```
-## Build and Launch
+## Launch Procedure
 
-Load Protocol:
+Load the project:
 ```
 mkdir /home/workspace/catkin_ws/
 cd /home/workspace/catkin_ws/
