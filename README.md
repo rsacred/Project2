@@ -52,13 +52,13 @@ cd /home/workspace/catkin_ws
 catkin_make
 ```
 
-Launch the gazebo simulation:
+Launch the Gazebo simulation:
 ```
 source devel/setup.bash
 roslaunch my_robot world.launch
 ```
 
-In a new terminal, launch ball_chaser by launching the drive_bot and process_image nodes:
+In a new terminal, launch the ball_chaser package by launching the drive_bot and process_image nodes:
 ```
 cd /home/workspace/catkin_ws
 source devel/setup.bash
