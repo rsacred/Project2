@@ -1,6 +1,6 @@
 # Project 2: Go Chase It!
 
-This project involves using ROS to create a robot that follows a white ball.
+This project involves the creation of a ROS package that enables a robot to follow a white ball.
 
 
 ## File Structure
